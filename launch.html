@@ -28,7 +28,9 @@
         //      2. permission to launch the app in the specific context
         var scope = [
                 "patient/*.read",
-                "launch"
+                "launch",
+                "online_access",
+                "user/Patient.read"
             ].join(" ");
             
         // Generate a unique session key string (here we just generate a random number
@@ -39,7 +41,6 @@
         // current URL and replace "launch.html" with "index.html".
         var launchUri = window.location.protocol + "//" + window.location.host + window.location.pathname;
         var redirectUri = launchUri.replace("launch.html","index.html");
-        alert(redirectUri)
         
         // FHIR Service Conformance Statement URL
         var conformanceUri = serviceUri + "/metadata"
