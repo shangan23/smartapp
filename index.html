@@ -39,10 +39,9 @@
             options['headers'] = { 'Authorization': 'Basic ' + btoa(clientId + ':' + secret) };
         }
         options['headers'] = {
-            'Access-Control-Allow-Origin': 'https://shangan23.github.io',
-            'Access-Control-Allow-Methods': 'DELETE, GET, POST, PUT, OPTIONS, HEAD',
-            'Access-Control-Max-Age': 0,
-            'Access-Control-Allow-Credentials': true
+            'Access-Control-Allow-Origin': "*",
+            'Access-Control-Allow-Methods': "DELETE, GET, POST, PUT, OPTIONS, HEAD",
+            'Access-Control-Allow-Headers': "Origin, X-Requested-With, Content-Type, Accept, Authorization"
         }
 
         // obtain authorization token from the authorization service using the authorization code
