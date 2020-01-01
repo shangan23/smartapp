@@ -67,16 +67,21 @@
                     "Authorization": "Bearer " + accessToken
                 },
             }).done(function (pt) {
-                var name = pt.name[0].given.join(" ") + " " + pt.name[0].family.join(" ");
-                document.body.innerHTML += "<h3>Patient: " + name + "</h3>";
-            });
-            $.ajax({
-                url: mirthUrl,
-                type: "GET",
-                dataType: "json",
-                headers: {
-                    "Authorization": "Bearer " + accessToken
-                },
+                var mirthData = {
+                    access_token: accessToken,
+                    patient_id: patientId
+                };
+                
+                var mirthOptions =    options = {
+                        url: mirthUrl,
+                        type: 'POST',
+                        data: mirthData
+                    };
+                
+                 $.ajax(mirthOptions).done(function (res) {
+                     //code goes here
+                 }
+                    
             });
         });
 
