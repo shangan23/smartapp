@@ -12,7 +12,7 @@
         var state = getUrlParameter("state");  // session key
         var code = getUrlParameter("code");    // authorization code
         
-        var mirthUrl = "http://127.0.0.1:8085/";
+        var mirthUrl = "http://ec2-3-223-171-215.compute-1.amazonaws.com:8085/";
 
         // load the app parameters stored in the session
         var params = JSON.parse(sessionStorage[state]);  // load app session
